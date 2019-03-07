@@ -406,7 +406,7 @@ func (db *baseDB) Delete(model interface{}) error {
 	return orm.Delete(db.db, model)
 }
 
-// Delete forces delete of the model with deleted_at column.
+// ForceDelete: Delete forces delete of the model with deleted_at column.
 func (db *baseDB) ForceDelete(model interface{}) error {
 	return orm.ForceDelete(db.db, model)
 }

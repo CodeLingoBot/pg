@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// Retry backoff with jitter sleep to prevent overloaded conditions during intervals
+// RetryBackoff: Retry backoff with jitter sleep to prevent overloaded conditions during intervals
 // https://www.awsarchitectureblog.com/2015/03/backoff.html
 func RetryBackoff(retry int, minBackoff, maxBackoff time.Duration) time.Duration {
 	if retry < 0 {

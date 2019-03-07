@@ -569,7 +569,7 @@ loop:
 	return q
 }
 
-// Order adds sort order to the Query.
+// OrderExpr: Order adds sort order to the Query.
 func (q *Query) OrderExpr(order string, params ...interface{}) *Query {
 	if order != "" {
 		q.order = append(q.order, &queryParamsAppender{order, params})
@@ -946,7 +946,7 @@ func (q *Query) Update(scan ...interface{}) (Result, error) {
 	return q.update(scan, false)
 }
 
-// Update updates the model omitting null columns.
+// UpdateNotNull: Update updates the model omitting null columns.
 func (q *Query) UpdateNotNull(scan ...interface{}) (Result, error) {
 	return q.update(scan, true)
 }
@@ -1011,7 +1011,7 @@ func (q *Query) Delete(values ...interface{}) (Result, error) {
 	return q.ForceDelete(values...)
 }
 
-// Delete forces delete of the model with deleted_at column.
+// ForceDelete: Delete forces delete of the model with deleted_at column.
 func (q *Query) ForceDelete(values ...interface{}) (Result, error) {
 	if q.stickyErr != nil {
 		return nil, q.stickyErr

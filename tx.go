@@ -239,7 +239,7 @@ func (tx *Tx) Delete(model interface{}) error {
 	return orm.Delete(tx, model)
 }
 
-// Delete forces delete of the model with deleted_at column.
+// ForceDelete: Delete forces delete of the model with deleted_at column.
 func (tx *Tx) ForceDelete(model interface{}) error {
 	return orm.ForceDelete(tx, model)
 }
